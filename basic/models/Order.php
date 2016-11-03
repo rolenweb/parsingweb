@@ -54,7 +54,7 @@ class Order extends Model
                 ->setTo($email)
                 ->setFrom([$this->email => $this->name])
                 ->setSubject('Заказ на пасинг')
-                ->setTextBody($this->body)
+                ->setTextBody($this->site.'<hr>'.$this->body)
                 ->send();
 
             return true;
