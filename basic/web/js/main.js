@@ -10,4 +10,11 @@ jQuery(function($) {
 	});	
 	//End goto top		
 
+	tinymce.init(
+		    	{ 
+		        	selector:'#order-body',
+		        	height : 220,
+		        	//plugins: "image",
+		    	}
+	);	
 });

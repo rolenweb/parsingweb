@@ -49,7 +49,7 @@ class Order extends Model
      */
     public function send($email)
     {
-        $body = $this->site.'<hr>'.$this->body;
+        $body = 'Name: '.$this->name.'<br><br> Sites: '.$this->site.'<hr>'.$this->body;
         if ($this->validate()) {
             Yii::$app->mailer->compose('order',['body' => $body])
                 ->setTo($email)
