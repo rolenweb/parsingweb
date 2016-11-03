@@ -49,12 +49,13 @@ class Order extends Model
      */
     public function send($email)
     {
+        $body = $this->site.'<hr>'.$this->body;
         if ($this->validate()) {
-            Yii::$app->mailer->compose()
+            Yii::$app->mailer->compose('order',['body' => $body])
                 ->setTo($email)
                 ->setFrom([$this->email => $this->name])
                 ->setSubject('Заказ на пасинг')
-                ->setTextBody($this->site.'<hr>'.$this->body)
+                ///->setTextBody($this->site.'<hr>'.$this->body)
                 ->send();
 
             return true;
