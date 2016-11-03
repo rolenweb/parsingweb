@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
-
+$this->registerJsFile('//cdn.tinymce.com/4/tinymce.min.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 ?>
 <section class="title">
         <div class="container">
@@ -27,8 +27,8 @@ use yii\captcha\Captcha;
 </section>
 <section id="order" class="container">
         <div class="row-fluid">
-			<div class="span2"></div>
-            <div class="span8">
+			<div class="span1"></div>
+            <div class="span10">
                 <h3>Заказать парсинг защищенного сайта</h3>
                 <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
                 <div class="alert alert-success">
