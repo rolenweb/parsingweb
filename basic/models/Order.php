@@ -54,7 +54,7 @@ class Order extends Model
             Yii::$app->mailer->compose('order',['body' => $body])
                 ->setTo($email)
                 ->setFrom([$this->email => $this->name])
-                ->setSubject('Заказ на пасинг')
+                ->setSubject('Заказ на парсинг')
                 ///->setTextBody($this->site.'<hr>'.$this->body)
                 ->send();
 
